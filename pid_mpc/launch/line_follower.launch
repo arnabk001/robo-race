@@ -1,0 +1,33 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+
+	<!--
+	NECESSARY PARAMS:
+      bag_path: The path of your rosbag. You should insert the path of your recorded bag.
+      follow_backwards: Whether or not the teleop commands should be published in reverse order
+    -->
+    	<arg name="plan_topic" default='/planner_node/car_plan' />
+    	<arg name="pose_topic" default='/car/car_pose' />
+		<arg name="plan_lookahead" default='5'/>
+    	<arg name="translation_weight" default='1.0' />
+    	<arg name="rotation_weight" default='0.0' />
+    	<arg name="kp" default='0.9' />
+    	<arg name="ki" default='0.02' />
+		<arg name="kd" default='0.1' />
+    	<arg name="error_buff_length" default='10' />
+    	<arg name="speed" default='1.0' />
+		<!-- Launch a BagFollower node and pass any necessary parameters -->
+    <node pkg="assignment3" type="line_follower.py" name="line_follower">
+		<param name="plan_topic" value="$(arg plan_topic)" />
+		<param name="pose_topic" value="$(arg pose_topic)" />
+		<param name="plan_lookahead" value="$(arg plan_lookahead)" />
+		<param name="translation_weight" value="$(arg translation_weight)" />
+		<param name="rotation_weight" value="$(arg rotation_weight)" />
+		<param name="kp" value="$(arg kp)" />
+		<param name="ki" value="$(arg ki)" />
+		<param name="kd" value="$(arg kd)" />
+		<param name="error_buff_length" value="$(arg error_buff_length)" />
+		<param name="speed" value="$(arg speed)" />
+    </node>
+  
+</launch>

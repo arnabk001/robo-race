@@ -1,0 +1,5 @@
+float32[] source
+float32[] target
+---
+geometry_msgs/Pose[] plan
+bool success
