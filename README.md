@@ -51,6 +51,6 @@ Note that our project also uses code from previous assignments. This code is ava
 
 
 Total path planned - showing waypoints
-!["Screenshot_rospath.png"](https://github.com/EE545/assignment-5-team-8/blob/master/Screenshot_rospath.png)
+!["Screenshot_rospath.png"](Screenshot_rospath.png)
 
 Actual track race video (included in github)
